@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Sanjita Kumari</title>
+  <link rel="icon" type="image/png" href="title.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script
+    src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+    type="module"
+  ></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ffffff;
+      overflow: hidden;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 40px;
+      height: 100vh;
+      width: 100vw;
+      background: #F2F2F2;
+      border-radius: 30px;
+      margin: auto;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .profile-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-img img {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .intro::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hello-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hello-title h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .intro-text {
+      margin: 15px 0 30px;
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    li strong {
+      color: #000;
+    }
+
+    .contact {
+      font-size: 0.85rem;
+      color: #555;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+      margin-top: 30px;
+    }
+
+    .contact p, .contact a {
+      margin: 5px 0;
+      color: #555;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact a:hover {
+      color: #000;
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow-y: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .right-column::-webkit-scrollbar {
+      display: none;
+    }
+
+    .skills-vertical {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .skill-box {
+      background-color: #222;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      width: fit-content;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .skill-box::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+      font-size: 0.75rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .skill-box:hover::after {
+      opacity: 1;
+    }
+
+    @media (max-width: 1024px) {
+      html, body {
+        overflow: auto;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow-y: auto;
+        border-radius: 0;
+      }
+
+      .intro,
+      .right-column {
+        overflow-y: visible;
+      }
+
+      .intro::-webkit-scrollbar,
+      .right-column::-webkit-scrollbar {
+        display: initial;
+      }
+
+      .contact {
+        border-top: none;
+        margin-top: 20px;
+      }
+
+      .right-column {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Column 1: Profile Image -->
+    <div class="profile-img">
+      <img src="pp.jpg" alt="Profile Photo">
+    </div>
+
+    <!-- Column 2: Intro + Education + Contact -->
+    <div class="intro">
+      <div>
+        <div class="hello-title">
+          <h1>Hello!</h1>
+          <dotlottie-wc
+            src="https://lottie.host/3b1bd686-4296-4d48-a24a-961c6d459636/CA2XROut9W.lottie"
+            style="width: 80px;height: 80px"
+            speed="1"
+            autoplay
+            loop
+          ></dotlottie-wc>
+        </div>
+
+        <p class="intro-text">
+         I'm Sanjita Kumari — a passionate Frontend Developer with a flair for crafting visually appealing and intuitive user interfaces. I love combining technology and creativity to bring ideas to life through impactful web experiences.
+        </p>
+
+        <h2>Education</h2>
+        <ul>
+          <li><strong>2021 - 2024</strong> – Maulana Abul Kalam Azad University of Technology [MAKAUT, WB]</li>
+          <li>Graduated with a Bachelor's degree in Computer Applications CGPA: 8.37</li>
+          <li><strong>2019 - 2021</strong> - Mother Teresa Academy</li>
+          <li>Higher Secondary [CBSE] Percentage: 82.61</li>
+          <li><strong>2019</strong> - West Point School, Matigara</li>
+          <li>Secondary [ICSE] Percentage: 75.82</li>
+        </ul>
+      </div>
+
+      <h2>Experience</h2>
+      <ul>
+        <li>In the process of establishing a startup called Booknest, focused on building innovative solutions in the reading/book domain.</li>
+      </ul>
+
+      <div class="contact">
+        <p><i class='bx bx-phone'></i> 74887 27425</p>
+        <p><i class='bx bx-envelope'></i> <a href="mailto:ksanjita05@gmail.com">ksanjita05@gmail.com</a></p>
+        <p><i class='bx bxl-linkedin'></i> <a href="https://www.linkedin.com/in/ksanjita0512" target="_blank">LinkedIn</a></p>
+        <p><i class='bx bxl-github'></i> <a href="https://github.com/Atijnas07" target="_blank">GitHub</a></p>
+        <p><i class='bx bxl-instagram'></i> <a href="https://www.instagram.com/buggedlife._/" target="_blank">Instagram</a></p>
+      </div>
+
+      <ul style="list-style: none; padding-left: 180px;">
+        <li><br><br>© 2025 Sanjita Kumari. All rights reserved.</li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Skills + Projects -->
+    <div class="right-column">
+      <h2>Skills</h2>
+      <div class="skills-vertical">
+        <div class="skill-box" data-tooltip="Microsoft Office Suite">Ms</div>
+        <div class="skill-box" data-tooltip="Google Colaboratory for Python Notebooks">Collab</div>
+        <div class="skill-box" data-tooltip="Figma UI/UX Designer">Fi</div>
+        <div class="skill-box" data-tooltip="Canva for Designing">Ca</div>
+      </div>
+
+      <h2>Technical Proficiency</h2>
+      <ul>
+        <li><strong>Programming Concepts</strong></li>
+        <li>Python , C , Java</li>
+      </ul>
+      <ul>
+        <li><strong>Frontend Development</strong></li>
+        <li>HTML , CSS , JavaScript , React</li>
+      </ul>
+      <ul>
+        <li><strong>Database Management</strong></li>
+        <li>SQL</li>
+      </ul>
+      <ul>
+        <li><strong>Computer Science Fundamentals</strong></li>
+        <li>Data Structures & Algorithms (DSA)</li>
+        <li>Object-Oriented Programming (OOPs)</li>
+        <li>Database Management System (DBMS)</li>
+        <li>Operating System (OS)</li>
+        <li>Software Engineering</li>
+      </ul>
+
+      <h2>Projects</h2>
+      <ul>
+        <li>Currently working on a mobile application named Hello using React Native (Expo CLI). The app is designed to manage daily aspects of a user's life, including features like a to-do list, mood tracker, and more.</li>
+        <li><strong>For more projects, visit <a href="https://github.com/Atijnas07" target="_blank">GitHub</a> and <a href="https://www.linkedin.com/in/ksanjita0512" target="_blank">LinkedIn</a>.</strong></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

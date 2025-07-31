@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome</title>
+  <script
+    src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+    type="module"
+  ></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    dotlottie-wc {
+      width: 30vw;
+      height: 30vw;
+      max-width: 300px;
+      max-height: 300px;
+    }
+
+    @media (max-width: 768px) {
+      dotlottie-wc {
+        width: 50vw;
+        height: 50vw;
+      }
+    }
+
+    @media (max-width: 480px) {
+      dotlottie-wc {
+        width: 70vw;
+        height: 70vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <dotlottie-wc
+    src="https://lottie.host/8bee3158-742b-416f-b437-015a7ccad9bc/FyuP0bEoAZ.lottie"
+    speed="1"
+    autoplay
+    loop
+  ></dotlottie-wc>
+
+  <script>
+    // Redirect to the main page after 5 seconds
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 5000);
+  </script>
+</body>
+</html>
